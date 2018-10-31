@@ -1,0 +1,10 @@
+package java集合遍历的方式;
+
+public class foreach循环遍历集合元素 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

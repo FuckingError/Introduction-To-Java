@@ -1,0 +1,40 @@
+package 图书管理系统;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class UserRegister {
+	//更改用户数据  注册添加
+	private static ArrayList<User> users = new ArrayList<User>();
+	public static void reg(){
+		Scanner scan = new Scanner(System.in);
+		boolean flag = true;
+		String number = null;
+		while(flag){
+			System.out.println("请输入用户名（首位不能为数字，由六位数组或字母组成）：");
+			number = scan.next();
+			if(!number.matches("[a-zA-z][a-zA-z0-9]{5}")){
+				System.out.println("输入用户名有误，请重新输入");
+			}else{
+				flag = false;
+			}
+		}
+		
+		flag = true;
+		String passWord = null;
+		while(flag){
+			System.out.println("请输入密码（首位不能为数字，由六位数组或字母组成）:");
+			passWord = scan.next();
+			if(!passWord.matches("[a-zA-z][a-zA-z0-9]{5}")){
+				System.out.println("输入密码，请重新输入");
+			}else{
+				flag = false;
+			}
+		}
+		//添加进用户
+		User user = new User();
+		user.setNumber(number);
+		user.setPassWord(passWord);
+		users.add(user);
+	}
+}

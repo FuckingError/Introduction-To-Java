@@ -1,0 +1,32 @@
+class Animal
+{
+	String name;
+    String color;
+
+    
+	public Animal(String n,String c)
+	{
+		name = n;
+		color = c;
+		eat();
+        System.out.println(this.name+"在吃屎");
+
+	}
+
+	public void eat()
+	{
+		String name = "老鼠";
+		System.out.println(this.name+"在打飞机");
+	}
+
+}
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Animal dog = new Animal("郝爽","黑不溜秋");
+		dog.eat();
+	
+	}
+}

@@ -1,0 +1,19 @@
+package cn.itcast.tcp;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+//接受图片的客户端
+public class Demo3ImageCilent {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		// TODO Auto-generated method stub
+		// 建立tcp服务
+		Socket socket = new Socket(InetAddress.getLocalHost(),9088);
+		InputStream socketInput = socket.getInputStream();
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package 集合;
+class Poker{
+	String color;
+	String num;
+	
+	public Poker(String color,String num){
+		this.color = color;
+		this.num = num;
+	}
+}
+
+
+
+
+public class Demo8 {
+	public static void main(String[] args)
+	{
+		String[] color = {"♠","♥","♣","♦"};
+		String[] num = {"A","2","3","4","5","6","7","8","9","10","11","12","13"};
+		
+	}
+
+}

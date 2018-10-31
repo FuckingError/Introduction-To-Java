@@ -1,0 +1,28 @@
+class EnableException extends Exception
+{
+	public EnableException(String message)
+	{
+		super(message);
+	}
+}
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		int money = 9;
+		try{
+		lunch(money);
+        }catch(EnableException e){
+			e.printStackTrace();
+			System.out.println("»Ø¼ÒÄÃÇ®£¡£¡£¡");
+		}
+	}
+
+	public static void lunch(int money) throws EnableException{
+		if(money<10){
+			throw new EnableException("Ç®²»¹»£¬¹ö£¡£¡£¡");
+		}
+		System.out.println("³ÔÁË¿¾Èâ·¹£¡£¡£¡");
+	}
+}

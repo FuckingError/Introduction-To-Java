@@ -1,0 +1,69 @@
+package 集合;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Demo6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List list = new ArrayList();
+		list.add("周杰伦");
+		list.add("胡歌");
+		list.add("周杰伦");
+		list.add("陆毅");
+		list.add("丁俊晖");
+	
+		/*
+		 * 添加
+		list.add(0,"刘清");
+		
+		List list2 = new ArrayList();
+		list2.add("周星驰");
+		list2.add("李连杰");
+		
+		list.addAll(1,list2);
+		*/
+		
+		/*获取
+		 * System.out.println(list.get(3));
+		System.out.println(list.indexOf("丁俊晖"));
+		System.out.println(list.lastIndexOf("周杰伦"));
+		System.out.println(list.subList(2, 4));
+*/
+	/*修改
+	 * 	list.set(2, "刘清");
+		System.out.println(list);
+	*/
+		ListIterator it = list.listIterator();
+		/*
+		 * 倒序输出
+		 * while(it.hasNext()){
+		   it.next();//输出的是指针那条线下面的一个元素
+		   }
+	   while(it.hasPrevious()){
+		   System.out.println("元素："+it.previous());
+	   }*/
+		
+		/*
+		 * 在指针所处位置添加元素
+	   it.add("刘清");
+	   System.out.println(list);
+	   */
+		
+		/*
+		 * list.size() 获取长度
+		 * */
+		
+		
+		
+		
+		/*替代迭代器最后一个返回的元素
+		 * */
+		it.next();
+		it.set("昆凌");
+		System.out.println(list);
+	}
+
+}

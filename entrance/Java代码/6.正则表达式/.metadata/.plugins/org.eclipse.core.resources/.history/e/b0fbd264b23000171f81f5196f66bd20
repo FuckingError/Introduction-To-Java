@@ -1,0 +1,12 @@
+package cn.itcast.regex;
+//正则表达式的四个应用
+public class Demo2 {
+	public static void main(String[] args){
+		
+	}
+	
+	//需求一:编写一个正则表达式匹配手机号:第一位：只能是1开头  第二位：3，4，5，7，8  长度：11位
+	public static void matchesPhone(String phone){
+		System.out.println("15252616685".matches("1[34578]\\d{9}"?"合法手机号":"非法手机号"));
+	}
+}

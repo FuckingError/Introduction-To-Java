@@ -1,0 +1,20 @@
+INDEX VERSION 1.129+E:\JAVA自学\Java代码\对象的克隆\.metadata\.plugins\org.eclipse.jdt.core
+4082412953.index
+1737808163.index
+2766877313.index
+2493511132.index
+4021092038.index
+1856647341.index
+183658060.index
+2496014908.index
+1682541460.index
+1557198540.index
+1403561993.index
+2200338613.index
+3852010242.index
+817394923.index
+1742307606.index
+576640712.index
+3632644816.index
+1717334715.index
+1844563913.index

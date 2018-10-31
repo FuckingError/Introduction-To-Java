@@ -1,0 +1,19 @@
+package cn.itcast.frame;
+
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frame = new JFrame("这是我的第一个图形化编程的例子");
+		frame.setSize(300, 500);
+		frame.setVisible(true);
+	}
+	public void initFrame(){
+		Toolkit toolkit = Toolkit.getDefaultToolkit();//获取一个与系统相关的工具类对象
+	}
+
+}

@@ -1,0 +1,16 @@
+package cn.itcast.tcp;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+//服务端
+public class Demo1CharServer {
+	public static void main(String[] args) throws IOException{
+		//建立Tcp服务端
+		ServerSocket serverSocket = new ServerSocket(9090);
+		//接收
+		Socket socket = serverSocket.accept();
+	}
+
+}

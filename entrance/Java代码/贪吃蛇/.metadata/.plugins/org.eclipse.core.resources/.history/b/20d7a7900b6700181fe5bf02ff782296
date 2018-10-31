@@ -1,0 +1,243 @@
+package cn.itcast.Snake;
+
+import java.awt.BorderLayout;
+import java.awt.Point;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.LinkedList;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+class SnakeMove extends Thread{
+	//构造方法
+	SnakeGame snakeGame;
+	public SnakeMove(SnakeGame snakeGame){
+		this.snakeGame = snakeGame;
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(true){
+		    snakeGame.move();
+		    snakeGame.refresh();
+			snakeGame.showSnake();
+			snakeGame.printLand();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+}
+
+public class SnakeGame {
+	//地图的宽和高
+	public static final int WIDTH = 30;
+	public static final int HEIGHT = 15;//学会用常量代替数据
+	//四个常量表示方向
+	public static final int UP = 1;
+	public static final int DOWN = -1;
+	public static final int RIGHT = 2;
+	public static final int LEFT = -2;
+	int direction = UP;
+	
+	//地图 使用二维数组
+	private  String[][] land = new String[HEIGHT][WIDTH];//二维数组前面是行 后面是列
+	//使用单例集合 储存蛇的信息
+	LinkedList<Point> snake = new LinkedList<Point>();
+	//食物
+	Point food;
+    //初始化蛇
+	public void getSnake(){
+		int x = WIDTH/2;
+		int y = HEIGHT/2;
+		snake.addFirst(new Point(x-1,y));
+		snake.addFirst(new Point(x,y));
+		snake.addFirst(new Point(x+1,y));
+	}
+	//显示蛇
+	public void showSnake() {
+		//蛇头
+		Point head = snake.getFirst();
+		land[head.y][head.x]="%";
+		//蛇身
+		for(int i = 1;i<snake.size();i++){
+			Point body = snake.get(i);
+			land[body.y][body.x]="#";
+		}
+	}
+	//蛇移动-->添加一个蛇头 去掉一个蛇尾
+	public void move(){
+		//获取原来的蛇头
+		Point head = snake.getFirst();
+		//如果蛇头碰到墙壁 就退出   同时判断是否吃到食物  吃到就返回true 
+		boolean flag = catchWall(head);
+		//添加新蛇头 
+		switch (direction) {
+		case UP:snake.addFirst(new Point(head.x,head.y-1));
+			
+		break;
+		case DOWN:snake.addFirst(new Point(head.x,head.y+1));
+		
+		break;
+		case RIGHT:snake.addFirst(new Point(head.x+1,head.y));
+		
+		break;
+		case LEFT:snake.addFirst(new Point(head.x-1,head.y));
+		
+		break;
+
+		default:
+			break;
+		}
+		//删除蛇尾
+		if(flag == false){
+		snake.removeLast();
+		}else{
+			getFood();
+			showFood();
+		}
+	}
+	
+	//改变蛇的移动方向
+	public void changeMove(int newDirection){
+		if(this.direction+newDirection!=0){
+			this.direction = newDirection;
+		}
+	}
+	
+	
+	//如果蛇头碰到墙壁  碰到自己  就显示游戏结束并退出 game over
+	public boolean catchWall(Point head) {
+		if(head.x==WIDTH-1||head.x==0||head.y==0||head.y==HEIGHT-1||land[head.y][head.x]=="#"){
+			//初始化地图
+			getLand();
+			printLand();
+			
+			int y = HEIGHT/2;
+			int x = WIDTH/2;
+			land[y][x-4] = "G";
+			land[y][x-3] = "A";		
+			land[y][x-2] = "M";
+			land[y][x-1] = "E";
+			land[y][x+1] = "O";
+			land[y][x+2] = "V";
+			land[y][x+3] = "E";
+			land[y][x+4] = "R";
+
+			printLand();
+			System.exit(0);
+		}else if(head.equals(food)){
+			return true;
+		}
+		return false;
+	}
+	
+	//public void 
+	//刷新游戏界面
+	public void refresh(){
+		getLand();
+		showSnake();
+		showFood();
+	}
+	
+	
+	//生成食物
+	public void getFood(){
+		//随机数
+		Random random = new Random();
+		while(true){
+			int x = random.nextInt(WIDTH-2)+1;//随机数在括弧里面加减是改变最大值 在外面加减是改变最大值和最小值
+			int y = random.nextInt(HEIGHT-2)+1;
+			if(land[y][x]!="*"){
+				food = new Point(x,y);
+			}
+			break;
+		}
+	}
+	
+	//展示食物 其实就是把食物的坐标 所在的二维数组改成“@”
+	public void showFood(){
+		land[food.y][food.x]="@";
+	}
+	
+	//地图的四周用*填充 其余用空字符
+	//初始化地图
+	public void getLand(){
+		for(int x=0;x<land.length;x++){//高
+			for(int y=0;y<land[x].length;y++){//宽
+				if(x==0||x==land.length-1||y==0||y==land[x].length-1){
+					land[x][y]="*";
+				}else{
+					land[x][y]=" ";
+				}
+			}
+		}
+	}
+	
+	//打印地图
+	public void printLand(){
+		for(int x=0;x<land.length;x++){
+			for(int y = 0;y<land[x].length;y++){
+				System.out.print(land[x][y]); //打印每一行;
+			}
+			//打印完一行后 到下一行
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		SnakeGame snakeGame = new SnakeGame();
+	
+		snakeGame.getLand();
+		snakeGame.getSnake();
+		//snakeGame.showSnake();//已经在二维数组中把这些坐标改成了蛇身 不会再改变
+		snakeGame.getFood();
+		snakeGame.printLand();
+
+		JFrame frame = new JFrame("方向控制器");
+		//使用边框管理器
+		frame.add(new JButton("↑"),BorderLayout.NORTH);
+		frame.add(new JButton("↓"),BorderLayout.SOUTH);
+		frame.add(new JButton("→"),BorderLayout.EAST);
+		frame.add(new JButton("←"),BorderLayout.WEST);
+		JButton button = new JButton("控制方向");
+		frame.add(button);
+		FrameUtil.initFrame(frame,200,180);
+	    new SnakeMove(snakeGame).start();
+		button.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				switch (e.getKeyCode()) {
+				case KeyEvent.VK_UP:snakeGame.changeMove(UP);
+					
+					break;
+				case KeyEvent.VK_DOWN:snakeGame.changeMove(DOWN);
+				
+				break;
+				case KeyEvent.VK_RIGHT:snakeGame.changeMove(RIGHT);
+				
+				break;
+				case KeyEvent.VK_LEFT:snakeGame.changeMove(LEFT);
+				
+				break;
+
+				default:
+					break;
+				}
+				snakeGame.move();
+				snakeGame.refresh();
+				snakeGame.showSnake();
+				snakeGame.printLand();
+			}
+		});
+	}
+}

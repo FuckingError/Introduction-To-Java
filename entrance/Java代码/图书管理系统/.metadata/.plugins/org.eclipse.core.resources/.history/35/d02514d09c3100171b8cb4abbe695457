@@ -1,0 +1,12 @@
+package 图书管理系统;
+
+public class Book {
+	private String bookName;
+	private String writer;
+	private String publister;
+	private String price;
+	private String number;
+	private String dath;
+	
+
+}

@@ -1,0 +1,30 @@
+package 集合;
+
+import java.util.LinkedList;
+
+class Person{
+	String name;
+	int age;
+	
+	public Person(String name,int age){
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "{"+"姓名："+name+" 年龄："+age+"}";
+	}
+}
+
+public class Demo11 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		
+
+	}
+
+}

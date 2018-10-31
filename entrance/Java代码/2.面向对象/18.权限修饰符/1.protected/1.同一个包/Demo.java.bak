@@ -1,0 +1,8 @@
+package a;
+
+class Demo
+{
+	
+		protected int i = 1;
+	
+}

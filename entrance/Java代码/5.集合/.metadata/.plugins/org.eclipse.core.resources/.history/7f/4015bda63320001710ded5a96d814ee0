@@ -1,0 +1,21 @@
+package ¼¯ºÏ;
+class Poker{
+	String color;
+	String num;
+	
+	public Poker(String color,String num){
+		this.color = color;
+		this.num = num;
+	}
+}
+
+
+
+
+public class Demo8 {
+	public static void main(String[] args)
+	{
+		
+	}
+
+}

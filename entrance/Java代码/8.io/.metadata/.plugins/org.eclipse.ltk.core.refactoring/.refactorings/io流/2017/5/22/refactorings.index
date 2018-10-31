@@ -1,0 +1,4 @@
+1496131821626	Rename package 'cn.itcast.reader'
+1496149145795	Extract method 'BufferedReaderText'
+1496219348456	Extract method 'reg'
+1496220059262	Extract method 'landing'

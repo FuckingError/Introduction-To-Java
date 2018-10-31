@@ -1,0 +1,59 @@
+package cn.itcast.frame;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import cn.itcast.util.FrameUtil;
+
+public class Demo3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frame = new JFrame("鼠标监听器");
+		JButton button = new JButton("按钮");
+		frame.add(button);
+		
+		button.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("鼠标松开");
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("鼠标按下");
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("鼠标移出");
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("鼠标进去");
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("鼠标单击");
+				
+			}
+		});
+		
+		FrameUtil.initFrame(frame, 300, 150);
+
+	}
+
+}

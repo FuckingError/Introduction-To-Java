@@ -1,0 +1,42 @@
+package cn.itcast.tcp;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+//聊天的客户端
+public class Demo1CharClient {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//建立tcp客户端
+		/*
+		Socket socket = new Socket(InetAddress.getLocalHost(),9090);
+		//socket获取输出流        OutputStreamWriter是字节流向字符流进行转换的桥梁
+		OutputStreamWriter socketout = new OutputStreamWriter(socket.getOutputStream());
+		//键盘录入                              BufferedReader 缓冲输入字符流  有readLine() 一行一行读
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		//不断地写入数据
+		String line = null;
+		while((line = bufferedReader.readLine()) != null){
+			socketout.write(line);
+		}
+		socket.close();
+		*/
+		
+		//建立tcp协议
+		Socket socket = new Socket(InetAddress.getLocalHost(),9090);
+		//获取输出流   最爽的是一行一行输出  
+		OutputStreamWriter outputStreamWriter  = new OutputStreamWriter(socket.getOutputStream());
+		//从键盘录入
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		//边读边写
+		String str = null;
+		while((str = bufferedReader.readLine()) != null){
+			outputStreamWriter.write(str);
+		}
+	}
+
+}

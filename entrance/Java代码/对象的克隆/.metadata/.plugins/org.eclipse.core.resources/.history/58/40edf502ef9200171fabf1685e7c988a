@@ -1,0 +1,29 @@
+package cn.itcast.Clone;
+
+public class Person implements Cloneable {
+	String name;
+	int age;
+	
+	public Person(String name,int age){
+		this.name = name;
+		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "–’√˚£∫"+this.name+" ƒÍ¡‰"+this.age;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

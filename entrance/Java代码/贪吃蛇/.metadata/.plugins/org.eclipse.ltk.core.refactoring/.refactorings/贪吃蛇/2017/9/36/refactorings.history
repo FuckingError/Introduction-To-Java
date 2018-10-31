@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;贪吃蛇&apos; to &apos;cn.itcast.Snake&apos;&#x0D;&#x0A;- Original project: &apos;贪吃蛇&apos;&#x0D;&#x0A;- Original element: &apos;贪吃蛇/src/贪吃蛇&apos;&#x0D;&#x0A;- Renamed element: &apos;贪吃蛇/src/cn.itcast.Snake&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;贪吃蛇&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;贪吃蛇" name="cn.itcast.Snake" qualified="false" references="true" stamp="1504686292928" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,32 @@
+class Animal
+{
+	String name;
+    String color;
+
+    
+	public Animal(String n,String c)
+	{
+		name = n;
+		color = c;
+		eat();
+        System.out.println(this.name+"‘⁄≥‘ ∫");
+
+	}
+
+	public void eat()
+	{
+		String name = "¿œ Û";
+		System.out.println(this.name+"");
+	}
+
+}
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Animal dog = new Animal("∫¬À¨","∫⁄≤ª¡Ô«Ô");
+		dog.eat();
+	
+	}
+}

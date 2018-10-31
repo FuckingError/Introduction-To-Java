@@ -1,0 +1,19 @@
+package cn.itcast.Clone;
+/*时间：2017年9月6日18:54:49
+ * 深克隆：
+ * */
+public class Demo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Address address = new Address("靖江");
+		Person person = new Person("刘清", 20, address);
+		
+
+	}
+	//对象输出到文件中
+	public static void writeObj(Person person){
+		
+	}
+
+}

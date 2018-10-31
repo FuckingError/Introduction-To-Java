@@ -1,0 +1,5 @@
+package a;
+class Demo2
+{
+	int i = 1;
+}

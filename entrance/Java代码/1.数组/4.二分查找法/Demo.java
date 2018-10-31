@@ -1,0 +1,82 @@
+//时间：2017年3月17日16:58:50
+//需求：定义一个函数接受一个数组对象和一个要查找的目标元素，函数要返回该目标元素在数组中的索引值，如果目标元素不存在数组中，那么返回-1
+import java.util.Scanner ;
+
+class Demo{
+  
+    public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入整数的个数:");
+		int number = sc.nextInt();
+		int[] arr = new int[number];
+		System.out.println("请输入整数：");
+		for(int i = 0;i<number;i++)
+		{
+			arr[i] = sc.nextInt();
+         }
+		System.out.println("请输入一个数:");
+		int target = sc.nextInt();
+        halfSearch(arr,number,target);
+		
+
+	
+	}
+	public static void halfSearch(int[] arr,int number,int target)
+	{
+		int min = 0,max = number-1,mid = (min + max)/2;
+		/*
+		if(target>arr[max]||target<arr[min])
+			{
+				System.out.println("你所需要的数字不在其中！");
+			}
+		*/
+		
+	
+		while(true)
+		{
+
+		   	if(arr[mid]<target)
+				{
+				 min = mid+1;
+				 mid = (min+max)/2;
+			    }
+		    else if(arr[mid]>target)
+				{
+			     max = mid-1;
+				 mid = (min+max)/2;
+		        }
+			else
+				{
+                System.out.println(target+"的索引值为："+mid);
+				break;
+			    }
+            if(max<min)
+			{
+			  System.out.println("你所输入的数据不在其中！");
+			  break;
+			}
+
+		 }
+      
+     }
+	
+}
+//运行繁琐的方法
+    /*
+	public static void searchEle(int[] arr,int number,int target)
+	{
+		for(int i = 0;i < number;i++)
+		{
+		  if(target == arr[i])
+			{
+			  System.out.println("索引值为"+i);
+			  }
+		    else
+			{
+              System.out.println("-1");
+			 }
+		}
+	}
+
+   */

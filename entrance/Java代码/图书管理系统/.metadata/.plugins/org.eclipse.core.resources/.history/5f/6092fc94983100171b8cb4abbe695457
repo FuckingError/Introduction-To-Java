@@ -1,0 +1,10 @@
+package 图书管理系统;
+
+public class UserRegister {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

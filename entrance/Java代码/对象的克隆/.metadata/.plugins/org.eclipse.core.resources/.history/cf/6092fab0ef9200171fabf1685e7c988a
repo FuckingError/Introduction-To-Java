@@ -1,0 +1,16 @@
+package cn.itcast.Clone;
+
+
+public class Demo1 {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Person person1 = new Person("¡ı«Â", 20);
+		Person person2 = (Person) person1.clone();
+		person2.age = 2;
+		System.out.println("p1:"+person1);
+		System.out.println("p2:"+person2);
+
+	}
+
+}

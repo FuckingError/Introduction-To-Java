@@ -1,0 +1,10 @@
+package java集合遍历的方式;
+
+public class 使用Lambada表达式遍历Iterator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

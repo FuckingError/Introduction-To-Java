@@ -1,0 +1,42 @@
+package 集合;
+
+import java.util.LinkedList;
+
+//
+
+class StruckList{
+	LinkedList list;
+	
+	public StruckList(){
+		list = new LinkedList();
+	}
+	
+	public void add(Object o ){
+		list.push(o);
+	}
+	
+	//弹栈：把元素删除并返回
+	public Object pop(){
+		return list.pop();
+	}
+	
+	public int size()
+	{
+		return list.size();
+	}
+}
+public class Demo10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StruckList list = new StruckList();
+		list.add("马云");
+		list.add("李嘉诚");
+		list.add("王健林");
+		
+		while(list.size()!=0){
+		System.out.println(list.pop());
+		}
+	}
+
+}

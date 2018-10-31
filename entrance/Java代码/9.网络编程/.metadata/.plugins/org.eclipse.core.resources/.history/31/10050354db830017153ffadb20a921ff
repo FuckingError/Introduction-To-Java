@@ -1,0 +1,10 @@
+package cn.itcast.tcp;
+
+public class Demo4LoginClient {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

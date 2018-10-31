@@ -1,0 +1,35 @@
+class Student
+{
+	String _id;
+	String _name;
+	int _age;
+
+    String Id;
+	{
+		_id = Id;
+	}
+
+	public Student(String id,String name,int age)
+	{
+		this._id = id;
+		this._name = name;
+		this._age = age;
+	}
+
+	public void Display()
+	{
+		System.out.println("学号："+_id+",姓名："+_name+",年龄："+_age);
+	}
+}
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Student s1 = new Student("Z00","刘清",20);
+		s1.Display();
+		s1.Id = "Z12";
+		
+
+		s1.Display();
+	}
+}

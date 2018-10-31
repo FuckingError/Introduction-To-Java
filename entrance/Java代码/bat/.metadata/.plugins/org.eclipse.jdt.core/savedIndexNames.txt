@@ -1,0 +1,4 @@
+INDEX VERSION 1.129+E:\JAVA自学\Java代码\图形化界面编程\.metadata\.plugins\org.eclipse.jdt.core
+1918763396.index
+3225591691.index
+2950284601.index

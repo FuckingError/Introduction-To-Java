@@ -1,0 +1,31 @@
+interface Dao{
+	public void add();
+}
+/*
+class Outer{
+	public void print(){
+		//创建接口实现的匿名内部类的对象
+		new Dao(){
+			public void add(){
+				System.out.print("添加成功");
+			}
+		}.add();
+	}
+}
+*/
+class Demo
+{
+	public static void main(String[] args)
+	{
+         test(new Dao(){
+		       public void add(){
+				   System.out.print("添加成功");
+				   }
+		      });
+	}
+
+	public static void test(Dao d) //形参类型为一个接口实现的类对象
+	{
+		d.add();
+	}
+}

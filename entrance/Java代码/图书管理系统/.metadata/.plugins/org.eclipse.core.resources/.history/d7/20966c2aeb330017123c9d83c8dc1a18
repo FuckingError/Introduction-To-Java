@@ -1,0 +1,48 @@
+package 图书管理系统;
+
+public class Book {
+	private String bookName;
+	private String writer;
+	private String publister;
+	private String price;
+	private String number;
+	private String dath;
+	
+	public String getBookName(){
+		return bookName;
+	}
+	public void setBookName(String bookName){
+		this.bookName = bookName;
+	}
+	
+	public String getwriter(){
+		return writer;
+	}
+	public void setWriter(String writer){
+		this.writer = writer;
+	}
+	
+	public String getPubli(){
+		return bookName;
+	}
+	public void setBookName(String bookName){
+		this.bookName = bookName;
+	}public String getBookName(){
+		return bookName;
+	}
+	public void setBookName(String bookName){
+		this.bookName = bookName;
+	}public String getBookName(){
+		return bookName;
+	}
+	public void setBookName(String bookName){
+		this.bookName = bookName;
+	}public String getBookName(){
+		return bookName;
+	}
+	public void setBookName(String bookName){
+		this.bookName = bookName;
+	}
+	
+
+}

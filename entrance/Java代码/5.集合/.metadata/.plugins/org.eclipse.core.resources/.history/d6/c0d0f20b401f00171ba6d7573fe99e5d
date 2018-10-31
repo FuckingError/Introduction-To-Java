@@ -1,0 +1,38 @@
+package 集合;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Demo6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List list = new ArrayList();
+		list.add("周杰伦");
+		list.add("胡歌");
+		list.add("周杰伦");
+		list.add("陆毅");
+		list.add("丁俊晖");
+	
+		/*
+		 * 添加
+		list.add(0,"刘清");
+		
+		List list2 = new ArrayList();
+		list2.add("周星驰");
+		list2.add("李连杰");
+		
+		list.addAll(1,list2);
+		*/
+		
+		/*获取
+		 * System.out.println(list.get(3));
+		System.out.println(list.indexOf("丁俊晖"));
+		System.out.println(list.lastIndexOf("周杰伦"));
+		System.out.println(list.subList(2, 4));
+*/
+		list.set(2, "刘清");
+		System.out.println(list);
+	}
+
+}

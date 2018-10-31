@@ -1,0 +1,35 @@
+package cn.itcast.Map;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+/*collections 常见方法
+ * 
+ * */
+public class Demo6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Person> list = new ArrayList<Person>();
+		
+		
+		/*Integer类型
+		 * list.add(2);
+		list.add(5);
+		list.add(7);
+		list.add(1);
+		*/
+		/*
+		 * 自定义类型  排序需要传入比较器
+		list.add(new Person(2,"刘清"));
+		list.add(new Person(1,"刘健"));
+		list.add(new Person(0,"jay"));
+		*/
+		//排序
+		Collections.sort(list);
+		System.out.println(list);
+		
+		
+	}
+
+}

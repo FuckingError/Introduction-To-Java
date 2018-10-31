@@ -1,0 +1,31 @@
+package cn.itcast.tcp;
+
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.rmi.server.SocketSecurityException;
+
+//模拟浏览器
+public class Demo3模拟浏览器 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//建立tcp服务
+		ServerSocket serverSocket = new ServerSocket(9089);
+		//接受
+		Socket socket = serverSocket.accept();
+		//获取socket的输出流对象
+		OutputStream outputStream  = socket.getOutputStream();
+		outputStream.write("你好啊 浏览器".getBytes());
+		
+		InetAddress address = InetAddress.getLocalHost();
+		System.out.println(address);
+		serverSocket.close();
+	
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package cn.itcast.Clone;
+/*时间：2017年9月6日18:30:00
+ * 浅克隆:
+ * 1.在需要克隆的对象中重写Clone的方法 修改权限为public
+ * 2.需要克隆的对象 实现Cloneable 接口
+ * 3.调用clone方法
+ * */
+
+public class Demo1 {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Person person1 = new Person("刘清", 20);
+		Person person2 = (Person) person1.clone();
+		person2.age = 2;
+		System.out.println("p1:"+person1);
+		System.out.println("p2:"+person2);
+
+	}
+
+}

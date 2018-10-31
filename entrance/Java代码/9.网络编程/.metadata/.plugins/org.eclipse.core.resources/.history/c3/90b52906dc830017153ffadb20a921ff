@@ -1,0 +1,10 @@
+package cn.itcast.tcp;
+//模拟登陆的客户端
+public class Demo4LoginClient {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

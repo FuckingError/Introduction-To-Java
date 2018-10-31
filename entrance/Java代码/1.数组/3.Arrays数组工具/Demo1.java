@@ -1,0 +1,19 @@
+//时间：2017年3月18日17:15:24
+//目的：体验 排序工具 输出工具 查找工具
+import java.util.*;
+class Demo1
+{
+	public static void main(String[] args)
+	{
+		int[] arr = {12,3,1,10,8};
+		Arrays.sort(arr);
+		int index = Arrays.binarySearch(arr,3);
+		System.out.println(index);
+		/*
+		Arrays.sort(arr);
+        String info = Arrays.toString(arr);
+		System.out.println(info);
+		*/
+
+	}
+}		

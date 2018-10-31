@@ -1,0 +1,52 @@
+package cn.itcast.tcp;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+//模拟登陆的客户端
+public class Demo4LoginClient {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		// TODO Auto-generated method stub
+		Socket socket = new Socket(InetAddress.getLocalHost(),9087); 
+		//获取socket的输出字符流
+		OutputStreamWriter socketOut = new OutputStreamWriter(socket.getOutputStream());
+		//获取socket的输入字符流
+		BufferedReader socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		//使用输入字符流 获取键盘输入
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		while(true){
+			//选择功能
+			System.out.println("请选择功能：【A】 登陆  【B】注册");
+			String option = bufferedReader.readLine();
+			if("a".equalsIgnoreCase(option)||"b".equalsIgnoreCase(option)){
+				//获取用户输入的数据 并发送
+				getInf(socketOut, bufferedReader, option);
+				//读取服务端发来的反馈
+				String line = socketInput.readLine();
+				System.out.println(line);
+			}else{
+				System.out.println("输入错误请重新输入");
+			}
+		}
+	}
+
+	//获取用户输入的数据
+	public static void getInf(OutputStreamWriter socketOut, BufferedReader bufferedReader, String option)
+			throws IOException {
+		System.out.println("请输入用户名:");
+		String userName =  bufferedReader.readLine();
+		System.out.println("请输入密码：");
+		String passWord = bufferedReader.readLine();
+		//整理数据发送给服务端
+		String inf = option+" "+userName+" "+passWord+"\r\n";
+		socketOut.write(inf);
+		socketOut.flush();
+	}
+
+}
